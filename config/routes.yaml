@@ -1,3 +1,26 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+home_index:
+    path: /
+    controller: App\Controller\HomeController::index
+
+calendar_index:
+    path: /calendrier
+    controller: App\Controller\CalendarController::index
+
+
+security_register:
+    path: security/inscription
+    controller: App\Controller\SecurityController::regiser
+
+security_login:
+    path: security/connexion
+    controller: App\Controller\SecurityController::login
+
+security_logout:
+    path: security/deconnexion
+    controller: App\Controller\SecurityController::logout
+
+api_event_edit:
+    methods: GET|POST
+    path: /api/{id}/edit
+    controller: App\Controller\SecurityController::majEvent
+
