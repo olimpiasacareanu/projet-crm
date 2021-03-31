@@ -7,12 +7,12 @@ calendar_index:
     controller: App\Controller\CalendarController::index
 
 
-security_register:
-    path: security/inscription
-    controller: App\Controller\SecurityController::regiser
+registration_register:
+    path: registration/
+    controller: App\Controller\RegistrationController::register
 
 security_login:
-    path: security/connexion
+    path: security/
     controller: App\Controller\SecurityController::login
 
 security_logout:
@@ -24,3 +24,43 @@ api_event_edit:
     path: /api/{id}/edit
     controller: App\Controller\SecurityController::majEvent
 
+#
+## Contact
+#
+
+contact_index:
+    path: /contact/
+    controller: App\Controller\ContactController::index
+
+contact_create:
+    path: /contact/new
+    controller: App\Controller\ContactController::form
+
+contact_edit:
+    path: /contact/{id}/edit
+    controller: App\Controller\ContactController::form
+
+contact_show:
+    methods: GET
+    path: /contact/show/{id}
+    controller: App\Controller\ContactController::show
+
+contact_delete:
+    path: /contact/delete/{id}
+    controller: App\Controller\ContactController::delete
+
+#
+## profil
+#
+
+profil_index:
+    path: /profil/
+    controller: App\Controller\ProfilController::index
+
+#
+## dashboard
+#
+
+dashboard_index:
+    path: /dashboard/
+    controller: App\Controller\DashboardController::index
