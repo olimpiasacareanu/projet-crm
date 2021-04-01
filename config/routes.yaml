@@ -64,3 +64,19 @@ profil_index:
 dashboard_index:
     path: /dashboard/
     controller: App\Controller\DashboardController::index
+
+#
+## admin
+#
+
+admin_index:
+    path: /admin/
+    controller: App\Controller\AdminController::index
+
+admin_users:
+    path: /admin/utilisateurs
+    controller: App\Controller\AdminController::userList
+
+admin_modifier:
+    path: /admin/utilisateur/modifier/{id}
+    controller: App\Controller\AdminController::editUser
