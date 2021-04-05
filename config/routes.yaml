@@ -8,21 +8,33 @@ calendar_index:
 
 
 registration_register:
-    path: registration/
+    path: /registration/
     controller: App\Controller\RegistrationController::register
 
 security_login:
-    path: security/
+    path: /security/
     controller: App\Controller\SecurityController::login
 
 security_logout:
-    path: security/deconnexion
+    path: /security/deconnexion
     controller: App\Controller\SecurityController::logout
+
+security_forgottenpass:
+    path: /security/forgottenpass
+    controller: App\Controller\SecurityController::forgottenPass
+
+security_ressetpass:
+    path: /security/ressetpass/{token}
+    controller: App\Controller\SecurityController::ressetPass
 
 api_event_edit:
     methods: GET|POST
     path: /api/{id}/edit
     controller: App\Controller\SecurityController::majEvent
+
+registration_activation:
+    path: /registration/activation/{token}
+    controller: App\Controller\RegistrationController::activation
 
 #
 ## Contact
