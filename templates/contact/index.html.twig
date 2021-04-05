@@ -1,0 +1,63 @@
+
+{% extends'base.html.twig' %}
+    {% block title %}Agenda{% endblock %}
+{% block body %}
+
+    <div class="container-fluid book">
+        <div class="row">
+
+            {# Menu gauche #}
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            {# Affichage des contacts #}
+            <div class="col-lg-10">
+                <h2>Rechercher</h2>
+                {{ form_start(formSearch) }}
+                {{ form_end(formSearch) }}
+                <h2>Search</h2>
+                {{ form_start(formCategory) }}
+                {{ form_end(formCategory) }}
+                {# Titre et bouton ajouter #}
+                <div class="contacts-top">
+                    <h1>Agenda de contacts</h1>
+                    <div class="btn btn-succes btn-create">
+                        <a href="{{ path('contact_create') }}">Ajouter un contact</a>
+                    </div>
+                </div>
+
+                {# Afficher les contacts #}
+                <div class="contacts">
+                    {% for contact in contacts %}
+                        <div class="contact">
+
+                            {# Avatar #}
+                            <div class="avatar">
+                                <img src="{{ asset('uploads/' ~ contact.image) }}" alt="avatar">
+                            </div>
+
+                            {# Partie droite #}
+                            <div class="contacts-details-right">
+                                <div class="contact-details">
+                                    <ul>
+                                        <li>{{ contact.fName }} {{ contact.lName }}</li>
+                                        <li>{{ contact.phone }}</li>
+                                    </ul>
+                                </div>
+
+                                {# Boutons afficher et editer #}
+                                <div class="button-flex">
+                                    <div class="btn-details"><a href="{{ path('contact_show', {'id': contact.id}) }}"><i class="fas fa-eye"></i></a></div>
+                                    <div class="btn-details"><a href="{{ path('contact_edit', {'id': contact.id}) }}"><i class="fas fa-pen-square"></i></a></div>
+                                    <div class="btn-details"><a href="{{ path('contact_delete', {'id': contact.id}) }}"><i class="fas fa-trash"></i></a></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            <div class="col-lg-10">
+                <h2>Les derniers contacts</h2>
+                {% for contact in contacts %}
+                <ul>
+                    <li><a href="{{ path('contact_show', {'id': contact.id}) }}">{{ contact.fName }} {{ contact.lName  }}</a></li>
+                </ul>
+                {% endfor %}
+                <h2>Evenements à venir</h2>
+                {% for event in events %}
+                    <ul>
+                        <li><a href="{{ path('event_show', {'id': event.id}) }}">{{ event.title }}</a></li>
+                        <li>{{ event.start ? event.start|date('Y-m-d H:i') : ''  }}</li>
+                        <li>{{ event.end ? event.start|date('Y-m-d H:i') : '' }}</li>
+                        <li>{{ event.description }}</li>
+
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

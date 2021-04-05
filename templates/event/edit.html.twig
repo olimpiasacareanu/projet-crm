@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Calendar{% endblock %}
+
+{% block body %}
+    <div class="container-fluid" id="edit-event">
+        <div class="row">
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            <div class="col-lg-10 edit-event">
+                <h1>Edit Calendar</h1>
+
+                <a href="{{ path('event_index') }}">Les évenements</a>
+
+
+                <div class="edit-btn">
+                    <div class="edit-update">
+                        {{ include('event/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+                    </div>
+                    <div class="edit-delete">
+                        {{ include('event/_delete_form.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

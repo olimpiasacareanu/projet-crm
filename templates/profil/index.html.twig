@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            <div class="col-lg-10">
+                <h1>Mon compte</h1>
+                {% for message in app.flashes('message') %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+                <ul>
+                    <li><b>{{ app.user.fName }} {{ app.user.lName }}</b></li>
+                    <li>{{ app.user.email }}</li>
+                    <li><a href="{{ path("profil_edit") }}">Modifier le profil</a></li>
+                    <li><a href="{{ path("profil_editpass") }}">Modifier le mot de passe</a></li>
+                    {%  for event in app.user.events %}
+                    <li>{{ event.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

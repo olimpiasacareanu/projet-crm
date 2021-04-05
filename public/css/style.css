@@ -1,0 +1,615 @@
+:root{
+    --title-font-family: 1;
+    --info-font-family: 1;
+    --bg-color: #B2D4EC;
+    --grey-color: #9baebc;
+    --light-rose-color:#dfbdd2;
+    --dark-rose-color:#a7889b;
+    --black-color:#000000;
+    --white-color:#ffffff;
+    --btn-color:#374955;
+}
+
+/*********** GENERAL ***************/
+
+.container-fluid h1{
+
+}
+
+/******* HEADER *********/
+header{
+    background-color: var(--bg-color);
+    padding: 30px 0;
+    margin-bottom: 50px;
+}
+
+header ul{
+    margin: 0;
+    padding: 0;
+}
+
+header ul li{
+    list-style-type: none;
+
+}
+
+header li a{
+    background-color: var(--btn-color);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 7px;
+    margin-left:20px;
+}
+
+header a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/************** HOME **********/
+
+.img-home img{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+.solution{
+    background-color:#dfbdd2;
+    color: #fff;
+    padding: 60px 100px;
+    position: relative;
+    top:-100px;
+}
+
+.solution h2{
+    font-size: 4em;
+}
+
+/********* FOOTER **************/
+footer{
+    background-color:var(--bg-color) ;
+    padding: 30px 0;
+    margin-top: 100px;
+}
+
+footer img{
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul li{
+    list-style-type: none;
+
+}
+
+footer ul li a{
+    color: var(--btn-color);
+}
+
+footer ul li a:hover{
+    color: var(--btn-color);
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+
+/********* LOGIN ***********/
+.login{
+    display: block;
+    margin: 180px 0;
+}
+
+.login h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-rose-color);
+}
+
+.login form{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login form input{
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+}
+
+.login form button{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--dark-rose-color);
+}
+
+.btn-success{
+    background-color: var(--dark-rose-color) !important;
+}
+
+
+
+/********* REGISTRATION ***********/
+
+.register {
+    display: block;
+    margin: 180px auto;
+    text-align: center;
+}
+
+.register h1{
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-rose-color);
+}
+.register form div{
+    margin: 0 auto;
+}
+
+.register form div input{
+    width: 50%;
+    border: 1px solid var(--light-rose-color);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+}
+
+.register input[type=checkbox] {
+    border-radius: 4px;
+    height: 70px;
+    width: 70px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.register form button{
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--dark-rose-color);
+    color: #fff !important;
+}
+
+.register form div:nth-of-type(5){
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    flex-direction: row-reverse;
+}
+
+.register form div:nth-of-type(5) label{
+    margin-bottom: 20px;
+}
+
+.btn{
+    background-color: var(--dark-rose-color) !important;
+}
+
+/***************** NAV-LEFT *********/
+.col-lg-2{
+    padding: 0 !important;
+}
+
+.nav-left{
+    background-color: var(--btn-color);
+    padding: 50px;
+    /*position: fixed;*/
+    /*top:0;*/
+    /*bottom:0;*/
+
+}
+
+.nav-left ul{
+    display: block;
+    margin:0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-left ul li{
+    list-style-type: none;
+    margin-bottom: 40px;
+}
+
+.nav-left ul li a{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left ul li a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+
+.nav-left .fas, .nav-left .fab{
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+/****************BOOK **********/
+
+
+.book h1{
+    color: var(--dark-rose-color);
+}
+.contacts-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.btn-create{
+    background-color: var(--btn-color) !important;
+    margin-right: 40px;
+}
+
+.btn-create a{
+    color: #fff !important;
+}
+
+.btn-create a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+.contacts{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contacts .avatar{
+    margin-bottom: 30px;
+}
+
+.contact{
+    display: flex;
+    padding: 15px;
+    margin:0 15px 15px 0;
+    border: 1px solid var(--light-rose-color);
+    border-radius: 10px;
+}
+
+.contacts img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.contacts ul{
+    margin: 0;
+    padding: 0;
+}
+
+.contacts ul li{
+    list-style-type: none;
+}
+
+.contacts-details-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-flex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.button-flex .fas{
+    font-size:1.5em;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: var(--dark-rose-color);
+}
+
+.contact-details ul li{
+    font-weight: bold;
+}
+
+/*********** CONTACT *****************/
+
+#contact h1{
+    color: var(--dark-rose-color);
+    margin-bottom: 60px;
+}
+
+.details-contact{
+    display: flex;
+}
+
+#contact ul{
+    margin:0;
+    padding: 0;
+}
+
+.contact-show ul li{
+    list-style-type: none;
+    font-size: 1.2em;
+}
+
+#contact img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-right: 50px;
+}
+
+#zoom{
+    display: none;
+}
+
+
+
+/*********** NEW / EDIT CONTACT ***************/
+
+.add-contact h1{
+    color: var(--dark-rose-color);
+    margin-bottom: 60px;
+}
+
+.add-contact input{
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 50%;
+}
+
+.add-contact label{
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 50%;
+}
+
+.add-contact select{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 50%;
+}
+
+.add-contact .btn-success{
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;
+}
+
+/************** CALENDAR **********/
+
+#calendar{
+    width: 80%;
+    margin:auto;
+}
+
+.calendar h1{
+    color: var(--dark-rose-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.add-event a{
+    background-color: var(--btn-color) !important;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff !important;
+
+}
+
+.add-event a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+.event-flex{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/************* NEW EVENT ***********/
+
+.new-calendar h1{
+    color:var(--dark-rose-color);
+    margin-bottom: 30px;
+}
+
+#calendar_title{
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 30%;
+}
+
+#calendar_start_date, #calendar_start_time_hour, #calendar_start_time_minute, #calendar_end_date, #calendar_end_time_hour, #calendar_end_time_minute{
+    border: 1px solid var(--light-rose-color);
+}
+
+input::checkbox{
+    border: 1px solid var(--light-rose-color);
+    padding: 5px;
+}
+
+.new-calendar textarea{
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 30%;
+}
+
+#calendar_background_color, #calendar_text_color{
+    width: 10%;
+    border: 1px solid var(--light-rose-color);
+
+}
+
+.new-calendar #calendar{
+    margin:50px 0 0 0;
+
+}
+
+.new-calendar button{
+    margin-bottom: 20px;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--dark-rose-color);
+    width: 25%;
+    color: #fff;
+}
+
+.new-calendar button:hover{
+    color: #fff;
+}
+
+.new-calendar a{
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+}
+
+.new-calendar a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+/*********** INDEX CALENDAR ************/
+
+.index-calendar a:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+.index-calendar h1{
+    color: var(--dark-rose-color);
+    margin-bottom: 40px;
+}
+
+.index-calendar .add-event{
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+}
+
+.index-calendar .table .fas{
+    font-size:1.5em;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: var(--dark-rose-color);
+}
+
+#show-event h1{
+    color: var(--dark-rose-color);
+    margin-bottom: 30px;
+}
+
+#show-event .show-event a:first-of-type{
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px 15px;
+}
+
+#show-event .show-event a:first-of-type:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
+#show-event .table{
+    margin: 50px 0;
+}
+
+.show-btn{
+    display: flex;
+}
+
+.show-btn a{
+    background-color: var(--dark-rose-color) !important;
+    padding-top: 6px !important;
+    margin-right: 10px;
+}
+
+.show-btn a:hover{
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.show-btn button{
+    padding: 6px 7px 8px 7px;
+    border-radius: 7px;
+    color: #fff;
+}
+
+.show-btn button:hover{
+    color: #fff;
+}
+
+/*************** EDIT CALENDAR *********************/
+
+#edit-event h1{
+    color:var(--dark-rose-color);
+    margin-bottom: 30px;
+}
+
+#edit-event textarea{
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--light-rose-color);
+    width: 30%;
+}
+
+#edit-event #calendar{
+    margin:40px 0;
+    padding: 0;
+}
+
+#edit-event .btn{
+    padding: 6px 7px 8px 7px;
+    border-radius: 7px;
+    color: #fff;
+}
+
+#edit-event  a:first-of-type{
+    background-color: var(--btn-color);
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px 15px;
+}
+
+#edit-event  a:first-of-type:hover{
+    text-decoration: none;
+    color: var(--light-rose-color);
+}
+
