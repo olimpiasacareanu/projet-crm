@@ -57,6 +57,18 @@ profil_index:
     path: /profil/
     controller: App\Controller\ProfilController::index
 
+profil_events_new:
+    path: /profil/evenements/ajout
+    controller: App\Controller\ProfilController::newEvent
+
+profil_edit:
+    path: /profil/edit
+    controller: App\Controller\ProfilController::editProfil
+
+profil_editpass:
+    path: /profil/editpassword
+    controller: App\Controller\ProfilController::editPassword
+
 #
 ## dashboard
 #

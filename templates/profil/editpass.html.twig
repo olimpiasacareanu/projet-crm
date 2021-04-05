@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            <div class="col-lg-10">
+                <h1>Modification du mot de passe</h1>
+                {% for message in app.flashes('error') %}
+                    <div>{{ message }}</div>
+                {% endfor %}
+                <form method="post">
+                    <label for="pass"></label>
+                    <input type="password" id="pass" name="pass" placeholder="Mot de passe">
+                    <label for="pass"></label>
+                    <input type="password" id="pass" name="pass2" placeholder="Confirmer le mot de passe">
+                    <button>Valider</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

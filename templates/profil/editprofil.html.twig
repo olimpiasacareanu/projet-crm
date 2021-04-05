@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                {% include('nav-left.html.twig') %}
+            </div>
+            <div class="col-lg-10">
+                <h1>Modification du compte</h1>
+
+                <div class="edit-profil">
+                    {{ form(formProfil) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
