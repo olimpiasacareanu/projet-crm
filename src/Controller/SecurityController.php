@@ -84,7 +84,7 @@ class SecurityController extends AbstractController
                     ->setTo($user->getEmail())
                     // On crée le contenu
                     ->setBody(
-                        "<p>Bonjour,</p><p>Une demande de réinitialisation de mot de passe a été effectuée pour votre compte. Veuillez cliquer sur le lien suivant : " . $url .'</p>',
+                        "<p>Bonjour,</p><p>Une demande de réinitialisation de mot de passe a été effectuée pour votre compte. Veuillez cliquer sur le lien suivant : <a href=" . $url .">Modifier votre mot de passe</a></p> ",
                         'text/html'
                     )
                 ;
