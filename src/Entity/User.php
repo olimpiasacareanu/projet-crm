@@ -101,6 +101,8 @@ class User implements UserInterface
         return $this;
     }
 
+
+
     public function getEmail(): ?string
     {
         return $this->email;
@@ -209,6 +211,11 @@ class User implements UserInterface
         $this->reset_token = $reset_token;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getEmail();
     }
 
 

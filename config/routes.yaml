@@ -23,9 +23,9 @@ security_forgottenpass:
     path: /security/forgottenpass
     controller: App\Controller\SecurityController::forgottenPass
 
-security_ressetpass:
-    path: /security/ressetpass/{token}
-    controller: App\Controller\SecurityController::ressetPass
+security_resetpass:
+    path: /security/resetpass/{token}
+    controller: App\Controller\SecurityController::resetPass
 
 api_event_edit:
     methods: GET|POST
