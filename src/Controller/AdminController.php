@@ -30,19 +30,20 @@ class AdminController extends AbstractController
 
     public function editUser(User $user = null, Request $request) :Response
     {
-
         $form = $this->createForm(EditUserType::class, $user);
+       // dd($request->request->all());
         $form->handleRequest($request);
-     //   dd($form);
+    //    dd($user);
         if($form->isSubmitted() && $form->isValid())
         {
+       //     $user->setRoles();
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
 
             $this->addFlash('message', 'utilisateur modifié avec succès');
 
-            return $this->redirectToRoute('admin_users');
+            return $this->redirectToRoute("admin_users");
         }
 
         return $this->render('admin/edituser.html.twig', [

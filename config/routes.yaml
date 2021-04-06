@@ -28,9 +28,9 @@ security_resetpass:
     controller: App\Controller\SecurityController::resetPass
 
 api_event_edit:
-    methods: GET|POST
+    methods: POST
     path: /api/{id}/edit
-    controller: App\Controller\SecurityController::majEvent
+    controller: App\Controller\ApiController::majEvent
 
 registration_activation:
     path: /registration/activation/{token}
@@ -102,5 +102,6 @@ admin_users:
     controller: App\Controller\AdminController::userList
 
 admin_modifier:
+    methods: GET|POST
     path: /admin/utilisateur/modifier/{id}
     controller: App\Controller\AdminController::editUser

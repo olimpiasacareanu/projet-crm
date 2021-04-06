@@ -21,7 +21,7 @@
 
     <script>
         window.onload = () => {
-            let calendarEl = document.querySelector('#calendar')
+            let calendarEl = document.querySelector("#calendar")
 
             let calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
@@ -52,7 +52,7 @@
                     "end": e.event.end,
                     "backgroundColor": e.event.backgroundColor,
                     "textColor": e.event.textColor,
-                //    "allDay": e.event.allDay
+                    "allDay": e.event.allDay
 
                 }
                 console.log(url);
