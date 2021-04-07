@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Calendar;
-use App\Entity\User;
 use App\Repository\CalendarRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use http\Client\Curl\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,11 +20,20 @@ class CalendarController extends AbstractController
 
     public function index(CalendarRepository $calendar): Response
     {
+//
+//        $user = $this->setUser();
+      //  $events = $calendar->findBy(array ('users' => $user));
+   //   $events = $calendar ->findAll();
 
-        $user= $this->getUser();
-        $events = $calendar ->findBy(array ('user' => $user));
+       $user= $this->getUser();
+
+   $events = $calendar->findEventsByUser($user);
+  // dd($user);
+
+      // dd($events);
 
             $rdvs = [];
+       // dd($rdvs);
             foreach($events as $event){
                 $rdvs[] = [
                     'id' => $event->getId(),
@@ -33,13 +44,17 @@ class CalendarController extends AbstractController
                     'backgroundColor' => $event->getBackgroundColor(),
                     'textColor' => $event->getTextColor(),
                     'allDay' => $event ->getAllDay(),
-                    'userId' => $event ->setUser($this->getUser()),
+                  //  'userId' => $event ->setUser($this->getUser()),
                 ];
 
-                $data = json_encode($rdvs);
-            }
+                $data= json_encode($rdvs);
+           //     dd($data);
+           }
 
 
-        return $this->render('calendar/index.html.twig', compact('data'));
+
+         return $this->render('calendar/index.html.twig', compact('data'));
     }
+
+
 }

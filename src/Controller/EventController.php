@@ -6,7 +6,6 @@ use App\Entity\Calendar;
 use App\Entity\User;
 use App\Form\CalendarType;
 use App\Repository\CalendarRepository;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,9 +19,14 @@ class EventController extends AbstractController
     /**
      * @Route("/", name="event_index", methods={"GET"})
      */
-    public function index(UserRepository $repository): Response
+    public function index(CalendarRepository $calendar): Response
     {
-        return $this->render('event/index.html.twig');
+        $user= $this->getUser();
+
+        $events = $calendar->findEventsByUser($user);
+        return $this->render('event/index.html.twig', [
+            'events' => $events,
+        ]);
 
     }
 
@@ -37,6 +41,8 @@ class EventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $calendar->setUser($this->getUser());
+          //  $calendar->addUser($this->getUser());
+         //  dd($calendar);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($calendar);
             $entityManager->flush();
@@ -93,4 +99,26 @@ class EventController extends AbstractController
 
         return $this->redirectToRoute('event_index');
     }
+
+    public function inviteUser(Request $request, Calendar $calendar)
+    {
+        $emailUser=$this->getDoctrine()->getRepository(User::class)->findOneBy(['email' => $email]);
+        dd($emailUser);
+
+
+//        if($request->isMethod('POST')){
+//
+//            $user = new User();
+//            $addUser = $user->findOneByEmail(array('email' => $email));
+//
+//            if($addUser!=false)
+//            {
+//                $event = new Calendar();
+//                $event->getUser();
+//            }
+//        }
+        return $this->render('event/index.html.twig', [
+            'calendar' => $calendar,
+        ]);
+   }
 }

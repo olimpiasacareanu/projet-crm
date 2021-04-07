@@ -29,8 +29,7 @@ class DashboardController extends AbstractController
         $user= $this->getUser();
         if($user){
             $events = $repository->createQueryBuilder('e')
-                ->select(['e.id, e.title, e.description, e.start, e.end, user.id'])
-                ->leftJoin('e.user', 'user')
+                ->join('e.users', 'user')
                 ->where('user.id = :user')
                 ->setParameter('user', $user)
                 ->orderBy('e.id', 'DESC')
@@ -47,20 +46,16 @@ class DashboardController extends AbstractController
     }
 }
 
-
-//$contacts = $repository
-//    ->createQueryBuilder('c')
-//    ->select(['c.id, c.fName, c.lName, c.phone, c.image, category.id, category.title'])
-//    ->leftJoin('c.category','category')
-//    ->where('category.id = :category')
-//    ->setParameter('category', $category)
-//    ->getQuery()
-//    ->execute();
+//
+//$user= $this->getUser();
+//if($user){
+//    $events = $repository->createQueryBuilder('e')
+//        ->select(['e.id, e.title, e.description, e.start, e.end, user.id'])
+//        ->leftJoin('e.user', 'user')
+//        ->where('user.id = :user')
+//        ->setParameter('user', $user)
+//        ->orderBy('e.id', 'DESC')
+//        ->setMaxResults(3)
+//        ->getQuery()
+//        ->execute();
 //}
-
-//$events = $repository->createQueryBuilder('e')
-//    ->select(['e.id, e.title, e.description, e.start, e.end, user.id'])
-//    ->orderBy('e.id', 'DESC')
-//    ->setMaxResults(3)
-//    ->getQuery()
-//    ->execute();

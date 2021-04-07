@@ -55,10 +55,9 @@ class Calendar
     private $text_color;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="events")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="events")
      */
-    private $user;
+    private $users;
 
     public function __construct()
     {
@@ -154,16 +153,37 @@ class Calendar
         return $this;
     }
 
-    public function getUser(): ?User
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
     {
-        return $this->user;
+        return $this->users;
     }
 
-    public function setUser(?User $user): self
+    public function addUser(User $user): self
     {
-        $this->user = $user;
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addEvent($this);
+        }
 
         return $this;
     }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeEvent($this);
+        }
+
+        return $this;
+    }
+
+
+
+
+
+
 
 }

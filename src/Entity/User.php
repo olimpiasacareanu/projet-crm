@@ -52,10 +52,6 @@ class User implements UserInterface
      */
     private $roles = [];
 
-    /**
-     * @ORM\OneToMany(targetEntity=Calendar::class, mappedBy="user", orphanRemoval=true)
-     */
-    private $events;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
@@ -66,6 +62,15 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $reset_token;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Calendar::class, inversedBy="users")
+     */
+    private $events;
+
+
+
+
 
     public function __construct()
     {
@@ -159,35 +164,7 @@ class User implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
-    /**
-     * @return Collection|Calendar[]
-     */
-    public function getEvents(): Collection
-    {
-        return $this->events;
-    }
 
-    public function addEvent(Calendar $event): self
-    {
-        if (!$this->events->contains($event)) {
-            $this->events[] = $event;
-            $event->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeEvent(Calendar $event): self
-    {
-        if ($this->events->removeElement($event)) {
-            // set the owning side to null (unless already changed)
-            if ($event->getUser() === $this) {
-                $event->setUser(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getActivationToken(): ?string
     {
@@ -217,6 +194,33 @@ class User implements UserInterface
     {
         return $this->getEmail();
     }
+
+    /**
+     * @return Collection|Calendar[]
+     */
+    public function getEvents(): Collection
+    {
+        return $this->events;
+    }
+
+    public function addEvent(Calendar $event): self
+    {
+        if (!$this->events->contains($event)) {
+            $this->events[] = $event;
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Calendar $event): self
+    {
+        $this->events->removeElement($event);
+
+        return $this;
+    }
+
+
+
 
 
 }

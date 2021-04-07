@@ -38,39 +38,9 @@
                     week: 'Semaine',
                     list: 'Liste',
                 },
-                events: {{ data|raw }},
-                editable: true,
-                eventResizableFromStart: true
+                events: {{ data|raw }}
             })
 
-            calendar.on('eventChange', (e) =>{
-                let url = `api/${e.event.id}/edit`
-                let donnees = {
-                    "title": e.event.title,
-                    "description": e.event.extendedProps.description,
-                    "start": e.event.start,
-                    "end": e.event.end,
-                    "backgroundColor": e.event.backgroundColor,
-                    "textColor": e.event.textColor,
-                    "allDay": e.event.allDay
-
-                }
-                console.log(url);
-                $.ajax({
-                    url:url,
-                    type: 'POST',
-                    data:donnees,
-                //    cache:false,
-                    success: function (response){
-                        console.log(response);
-                        // console.log(JSON.parse(response))
-                    },
-                    error: function (err) {
-                        console.error(err);
-                    }
-                });
-
-            })
             calendar.render();
         }
     </script>

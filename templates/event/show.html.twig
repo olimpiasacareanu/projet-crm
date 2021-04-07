@@ -51,7 +51,14 @@
                 <div class="show-btn">
                     <a href="{{ path('event_edit', {'id': calendar.id}) }}">Modifier</a>
                     {{ include('event/_delete_form.html.twig') }}
+
                 </div>
+                <form action="{{ path('event_invite') }}" method="post">
+                    <label for="email"></label>
+                    <input name="email" type="email"  value="Email">
+                    <input name="idevent" type="hidden" value="{{ calendar.id }}">
+                    <input type="submit" value="Ajouter User">
+                </form>
             </div>
         </div>
     </div>
