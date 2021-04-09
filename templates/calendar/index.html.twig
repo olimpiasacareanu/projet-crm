@@ -38,9 +38,7 @@
                     week: 'Semaine',
                     list: 'Liste',
                 },
-                events: {{ data|raw }},
-                editable: true,
-                eventResizableFromStart: true
+                events: {{ data|raw }}
             })
 
             calendar.on('eventChange', (e) =>{

@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Calendar;
-use App\Entity\User;
 use App\Repository\CalendarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +18,7 @@ class CalendarController extends AbstractController
     {
 
         $user= $this->getUser();
-        $events = $calendar ->findBy(array ('user' => $user));
+        $events = $calendar->findEventsByUser($user);
 
             $rdvs = [];
             foreach($events as $event){
@@ -33,7 +31,6 @@ class CalendarController extends AbstractController
                     'backgroundColor' => $event->getBackgroundColor(),
                     'textColor' => $event->getTextColor(),
                     'allDay' => $event ->getAllDay(),
-                    'userId' => $event ->setUser($this->getUser()),
                 ];
 
                 $data = json_encode($rdvs);

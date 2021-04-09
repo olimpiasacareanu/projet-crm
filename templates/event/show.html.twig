@@ -13,10 +13,6 @@
                 <a href="{{ path('event_index') }}">Les évènements</a>
                 <table class="table">
                     <tbody>
-                    {#            <tr>#}
-                    {#                <th>Id</th>#}
-                    {#                <td>{{ calendar.id }}</td>#}
-                    {#            </tr>#}
                     <tr>
                         <th>Titre</th>
                         <td>{{ calendar.title }}</td>
@@ -37,14 +33,7 @@
                         <th>Toute le journéé</th>
                         <td>{{ calendar.allDay ? 'Yes' : 'No' }}</td>
                     </tr>
-                    {#            <tr>#}
-                    {#                <th>Background_color</th>#}
-                    {#                <td>{{ calendar.backgroundColor }}</td>#}
-                    {#            </tr>#}
-                    {#            <tr>#}
-                    {#                <th>Text_color</th>#}
-                    {#                <td>{{ calendar.textColor }}</td>#}
-                    {#            </tr>#}
+
                     </tbody>
                 </table>
 
