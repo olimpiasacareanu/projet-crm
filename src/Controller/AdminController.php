@@ -31,12 +31,11 @@ class AdminController extends AbstractController
     public function editUser(User $user = null, Request $request) :Response
     {
         $form = $this->createForm(EditUserType::class, $user);
-       // dd($request->request->all());
         $form->handleRequest($request);
-    //    dd($user);
+
         if($form->isSubmitted() && $form->isValid())
         {
-       //     $user->setRoles();
+
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();

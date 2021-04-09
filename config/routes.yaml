@@ -105,3 +105,11 @@ admin_modifier:
     methods: GET|POST
     path: /admin/utilisateur/modifier/{id}
     controller: App\Controller\AdminController::editUser
+
+#
+## event
+#
+#
+#event_invite:
+#    path: /event/{id}/show
+#    controller: App\Controller\EventController::inviteUser

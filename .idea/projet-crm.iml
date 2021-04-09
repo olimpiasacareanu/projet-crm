@@ -107,9 +107,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/var" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="all" level="application" />
+    <orderEntry type="library" name="jquery-2.2.4" level="application" />
+    <orderEntry type="library" name="popper.js" level="application" />
+    <orderEntry type="library" name="fullcalendar" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="all" level="application" />
   </component>
 </module>

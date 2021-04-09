@@ -1,25 +1,31 @@
 {% extends'base.html.twig' %}
 
     {% form_theme formContact 'bootstrap_4_layout.html.twig' %}
+    {% block title %}Contact{% endblock %}
 
 {% block body %}
     <div class="container-fluid add-contact">
         <div class="row">
+
             <div class="col-lg-2">
                 {% include('nav-left.html.twig') %}
             </div>
+
             <div class="col-lg-10">
 
+                {# Modify or create contact#}
                 {% if editMode %}
-                    <h1> Modifier le contact</h1>
+                    <h4> Modifier le contact</h4>
                 {% else %}
-                    <h1>Création d'un contact</h1>
+                    <h4>Création d'un contact</h4>
                 {% endif %}
 
+                {#Forms #}
                 {{ form_start(formContact) }}
                 {{ form_widget(formContact) }}
 
-                <button type="submit" class="btn btn-success">
+                {#Buttons#}
+                <button type="submit" class="btn btn-secondary">
                     {% if editMode %}
                         Enregistrer
                     {% else %}

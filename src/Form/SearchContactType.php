@@ -16,10 +16,15 @@ class SearchContactType extends AbstractType
             ->add('mots', SearchType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Entrez un ou plusieurs mots-clés'
+                    'placeholder' => 'Je cherche',
+                    'class' => 'form-control'
                 ]
             ])
-            ->add('Rechercher',SubmitType::class)
+            ->add('Rechercher',SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-dark'
+                ]
+            ])
         ;
     }
 

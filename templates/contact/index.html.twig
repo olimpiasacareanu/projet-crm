@@ -1,4 +1,3 @@
-
 {% extends'base.html.twig' %}
     {% block title %}Agenda{% endblock %}
 {% block body %}
@@ -10,21 +9,29 @@
             <div class="col-lg-2">
                 {% include('nav-left.html.twig') %}
             </div>
+
             {# Affichage des contacts #}
-            <div class="col-lg-10">
-                <h2>Rechercher</h2>
-                {{ form_start(formSearch) }}
-                {{ form_end(formSearch) }}
-                <h2>Search</h2>
-                {{ form_start(formCategory) }}
-                {{ form_end(formCategory) }}
-                {# Titre et bouton ajouter #}
-                <div class="contacts-top">
-                    <h1>Agenda de contacts</h1>
-                    <div class="btn btn-succes btn-create">
-                        <a href="{{ path('contact_create') }}">Ajouter un contact</a>
+            <div class="col-lg-10 index-contacts">
+                <h4>Agenda de contacts</h4>
+
+
+                <div class="search-form">
+
+                    {# Titre et bouton ajouter #}
+                    <div class="add-contact">
+                        <a class="btn-secondary btn" role="button" href="{{ path('contact_create') }}">Ajouter un contact</a>
                     </div>
+
+                    {#Search#}
+                    {{ form_start(formSearch) }}
+                    {{ form_end(formSearch) }}
+
+                    {#Filter contacts by category#}
+                    {{ form_start(formCategory) }}
+                    {{ form_end(formCategory) }}
+
                 </div>
+
 
                 {# Afficher les contacts #}
                 <div class="contacts">

@@ -1,19 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}Accueil{% endblock %}
 {% block body %}
-    <div class=" img-home">
-        <img src="{{ asset('uploads/team.jpg') }}" alt="accueil">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
+    <div class="container-fluid">
 
-            </div>
-            <div class="col-lg-9">
-                <div class="solution">
-                    <h2>VOTRE <br> SOLUTION <br> CRM</h2>
-                </div>
-            </div>
+        {#Home Image#}
+        <div class="img-home">
+            <h2>VOTRE <br> SOLUTION <br> CRM</h2>
+            <img src="{{ asset('uploads/team.jpg') }}" alt="accueil">
+
         </div>
 
     </div>

@@ -18,9 +18,16 @@ class CategorySearchType extends AbstractType
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'title',
-                'label' => 'Catégorie',
+                'label' => false,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-dark'
+                ]
+            ])
         ;
     }
 

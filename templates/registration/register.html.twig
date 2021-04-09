@@ -4,21 +4,28 @@
 
 {% block body %}
     <div class="container register">
-        <h1>Inscription sur le site</h1>
-        {% for flashError in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-        {% endfor %}
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h3>Inscription sur le site</h3>
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
 
-        {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.fName, {'label': false, 'attr': {'placeholder': 'Prénom'}}) }}
-        {{ form_row(registrationForm.lName, {'label': false, 'attr': {'placeholder': 'Nom'}}) }}
-        {{ form_row(registrationForm.email, {'label': false, 'attr': {'placeholder': 'E-mail'}}) }}
-        {{ form_row(registrationForm.plainPassword, {'label': false, 'attr': {'placeholder': 'Mot de passe'}}) }}
+                    {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.fName, {'label': false, 'attr': {'placeholder': 'Prénom', 'class' : 'form-control'}}) }}
+                    {{ form_row(registrationForm.lName, {'label': false, 'attr': {'placeholder': 'Nom', 'class' : 'form-control'}}) }}
+                    {{ form_row(registrationForm.email, {'label': false, 'attr': {'placeholder': 'E-mail', 'class' : 'form-control'}}) }}
+                    {{ form_row(registrationForm.plainPassword, {'label': false, 'attr': {'placeholder': 'Mot de passe', 'class' : 'form-control'}}) }}
+                    <div class="agree">
+                        {{ form_row(registrationForm.agreeTerms, {'label': 'J’ai lu et j’accepte les conditions générales d’utilisation.'}) }}
+                    </div>
 
-        {{ form_row(registrationForm.agreeTerms, {'label': 'J’ai lu et j’accepte les conditions générales d’utilisation et j’ai compris l’information sur le traitement de mes données personnelles expliquée dans la Politique de confidentialité.'}) }}
-
-        <button type="submit" class="btn">Inscription</button>
-        {{ form_end(registrationForm) }}
+                <button type="submit" class="btn btn-secondary">Inscription</button>
+                {{ form_end(registrationForm) }}
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
     </div>
 
 {% endblock %}

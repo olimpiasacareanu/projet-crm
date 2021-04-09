@@ -4,13 +4,18 @@
 
 {% block body %}
     <div class="container login">
-        <h1>Entrez votre nouveau mot de passe</h1>
-        <form method="post">
-            <label for="pass"></label>
-            <input type="password" name="password" id="pass">
-            <input type="hidden" name="token" value="{{ token }}">
-            <button>Valider</button>
-        </form>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h3>Entrez votre nouveau mot de passe</h3>
+                <form method="post">
+                    <label for="pass"></label>
+                    <input class="form-control" type="password" name="password" id="pass">
+                    <input type="hidden" name="token" value="{{ token }}">
+                    <button class="btn btn-secondary">Valider</button>
+                </form>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
     </div>
-
 {% endblock %}

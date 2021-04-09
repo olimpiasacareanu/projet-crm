@@ -36,7 +36,11 @@ class EditUserType extends AbstractType
                 'multiple' => true,
                 'label' => 'Roles'
             ])
-            ->add('Valider', SubmitType::class)
+            ->add('Valider', SubmitType::class,[
+                'attr' => [
+                    'class' => 'btn btn-secondary'
+                ]
+            ])
         ;
 
     }

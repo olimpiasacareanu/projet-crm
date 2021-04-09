@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %}Edit Calendar{% endblock %}
 
 {% block body %}
@@ -9,10 +10,9 @@
                 {% include('nav-left.html.twig') %}
             </div>
             <div class="col-lg-10 edit-event">
-                <h1>Edit Calendar</h1>
+                <h4>Edit Calendar</h4>
 
-                <a href="{{ path('event_index') }}">Les évenements</a>
-
+                <a class="btn-dark btn" href="{{ path('event_index') }}">Les évenements</a>
 
                 <div class="edit-btn">
                     <div class="edit-update">
@@ -22,6 +22,7 @@
                         {{ include('event/_delete_form.html.twig') }}
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

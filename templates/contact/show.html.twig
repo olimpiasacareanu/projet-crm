@@ -3,20 +3,16 @@
 {% block body %}
     <div class="container-fluid" id="contact">
         <div class="row">
+
             <div class="col-lg-2">
                 {% include('nav-left.html.twig') %}
             </div>
+
             <div class="col-lg-10 contact-show">
-                <h1>Details contact</h1>
+
+                {#Contact details#}
                 <div class="details-contact">
                     <img src="{{ asset('uploads/' ~ contact.image) }}" alt="avatar">
-                    <img id="project" style="display:none" src="{{ asset('uploads/' ~ contact.image) }}" alt="avatar">
-                    <div id="zoom">
-                        <!-- The Close Button -->
-                        <span class="close"><i class="fas fa-times"></i></span>
-                        <!-- Modal Content (The Image) -->
-                        <img class="modal-img" id="img01" src="">
-                    </div>
                     <ul>
                         <li><b>{{ contact.fName }} {{ contact.lName }}</b></li>
                         <li><b>{{ contact.phone }}</b></li>
@@ -26,11 +22,10 @@
                         <li>{{ contact.category }}</li>
                     </ul>
                 </div>
-                <br>
-                <br>
-                <br>
-                <div class="btn btn-succes btn-create">
-                    <a href="{{ path('contact_index') }}">Retour aux contacts</a>
+
+                {#Button back to contacts#}
+                <div class="back-contact">
+                    <a class="btn-secondary btn" role="button"  href="{{ path('contact_index') }}">Retour aux contacts</a>
                 </div>
             </div>
         </div>
