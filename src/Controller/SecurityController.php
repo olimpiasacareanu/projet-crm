@@ -56,7 +56,7 @@ class SecurityController extends AbstractController
             if(!$user)
             {
                 //On envoie un msg flash
-                $this->addFlash('danger', 'cette adresse n\'existe pas');
+                $this->addFlash('danger', 'Cette adresse n\'existe pas');
                 return $this->redirectToRoute('security_login');
             }
 

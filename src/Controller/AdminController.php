@@ -40,7 +40,7 @@ class AdminController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('message', 'utilisateur modifié avec succès');
+            $this->addFlash('message', 'Utilisateur modifié avec succès');
 
             return $this->redirectToRoute("admin_users");
         }

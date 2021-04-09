@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block title %}New Calendar{% endblock %}
 
 {% block body %}
-    <div class="container-fluid new-calendar">
+    <div class="container-fluid ">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-sm-12 col-md-2">
                 {% include('nav-left.html.twig') %}
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-10 col-md-10 col-sm-12 new-calendar">
                 <h4>Créer un nouvel évènement</h4>
-                <a href="{{ path('event_index') }}">Les évènements</a>
+                <a class="btn-secondary btn" href="{{ path('event_index') }}">Les évènements</a>
                 {{ include('event/_form.html.twig') }}
             </div>
         </div>

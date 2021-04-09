@@ -46,16 +46,3 @@ class DashboardController extends AbstractController
     }
 }
 
-//
-//$user= $this->getUser();
-//if($user){
-//    $events = $repository->createQueryBuilder('e')
-//        ->select(['e.id, e.title, e.description, e.start, e.end, user.id'])
-//        ->leftJoin('e.user', 'user')
-//        ->where('user.id = :user')
-//        ->setParameter('user', $user)
-//        ->orderBy('e.id', 'DESC')
-//        ->setMaxResults(3)
-//        ->getQuery()
-//        ->execute();
-//}

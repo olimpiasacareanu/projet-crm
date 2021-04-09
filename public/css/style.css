@@ -149,6 +149,7 @@ footer .author{
 /************** NAV-LEFT ***********/
 .nav-left{
     background: #374955;
+    height: 100%;
 }
 
 .nav-left ul{
@@ -441,3 +442,37 @@ footer .author{
 #edit-event .edit-event{
     margin-bottom: 50px;
 }
+/************** CREATE EVENT ************/
+.new-calendar{
+    margin-bottom: 40px;
+}
+
+.new-calendar h4{
+    margin: 40px 0;
+}
+
+.new-calendar form{
+    width: 50%;
+}
+
+
+/************ DACHBOARD ************/
+
+.dashboard h4{
+    margin:40px 0;
+}
+
+.dashboard ul li{
+    list-style-type: none;
+}
+
+.dashboard ul li a{
+    color: orangered;
+    font-weight: bold;
+}
+
+.dashboard ul li a:hover{
+    text-decoration: none;
+    opacity: 0.7;
+}
+

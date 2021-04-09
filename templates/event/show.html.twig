@@ -9,8 +9,8 @@
                 {% include('nav-left.html.twig') %}
             </div>
             <div class="col-lg-10 show-event">
-                <h1>Calendrier</h1>
-                <a href="{{ path('event_index') }}">Les évènements</a>
+                <h4>Calendrier</h4>
+                <a class="btn btn-secondary" href="{{ path('event_index') }}">Les évènements</a>
                 <table class="table">
                     <tbody>
                     <tr>
@@ -19,11 +19,11 @@
                     </tr>
                     <tr>
                         <th>Début</th>
-                        <td>{{ calendar.start ? calendar.start|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ calendar.start ? calendar.start|date('H:i d-m-y ') : '' }}</td>
                     </tr>
                     <tr>
                         <th>Fin</th>
-                        <td>{{ calendar.end ? calendar.end|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ calendar.end ? calendar.end|date('H:i d-m-y ') : '' }}</td>
                     </tr>
                     <tr>
                         <th>Description</th>
@@ -38,7 +38,7 @@
                 </table>
 
                 <div class="show-btn">
-                    <a href="{{ path('event_edit', {'id': calendar.id}) }}">Modifier</a>
+                    <a class="btn btn-secondary" href="{{ path('event_edit', {'id': calendar.id}) }}">Modifier</a>
                     {{ include('event/_delete_form.html.twig') }}
                 </div>
             </div>

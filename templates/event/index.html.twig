@@ -28,8 +28,8 @@
                     {% for event in events %}
                         <tr>
                             <td>{{ event.title }}</td>
-                            <td>{{ event.start ? event.start|date('d/m/y h:m') : '' }}</td>
-                            <td>{{ event.end ? event.end|date('d/m/y h:m') : '' }}</td>
+                            <td>{{ event.start ? event.start|date('h:i d-m-y ') : '' }}</td>
+                            <td>{{ event.end ? event.end|date('h:i d-m-y ') : '' }}</td>
                             <td>{{ event.description }}</td>
                             <td>{{ event.allDay ? 'Oui' : 'Non' }}</td>
                             <td>
