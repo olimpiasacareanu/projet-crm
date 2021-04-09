@@ -6,6 +6,7 @@ use App\Entity\Calendar;
 use App\Entity\User;
 use App\Form\CalendarType;
 use App\Repository\CalendarRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,14 +20,9 @@ class EventController extends AbstractController
     /**
      * @Route("/", name="event_index", methods={"GET"})
      */
-    public function index(CalendarRepository $calendar): Response
+    public function index(UserRepository $repository): Response
     {
-        $user= $this->getUser();
-
-        $events = $calendar->findEventsByUser($user);
-        return $this->render('event/index.html.twig', [
-            'events' => $events,
-        ]);
+        return $this->render('event/index.html.twig');
 
     }
 
@@ -40,9 +36,7 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-        //    $calendar->setUser($this->getUser());
-           $calendar->addUser($this->getUser());
-         //  dd($calendar);
+            $calendar->setUser($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($calendar);
             $entityManager->flush();
@@ -99,53 +93,4 @@ class EventController extends AbstractController
 
         return $this->redirectToRoute('event_index');
     }
-
-    /**
-     * @Route("/{id}/invite", name="event_invite", methods={"GET", "POST"})
-     */
-    public function inviteUser($id, Request $request)
-    {
-      //  $manager = $this->getDoctrine()->getManager();
-    //    $events = $manager->getRepository(Calendar::class)->find($id);
-   //   dd($events);
-/*
-        if (!$events) {
-            throw $this->createNotFoundException('Aucun événement trouvé '.$id);
-        }
-        if($request->isMethod('post'))
-        {
-
-            $repository = $manager->getRepository(Calendar::class);
-            $user= $this->getUser();
-            if($user){
-                $events = $repository->createQueryBuilder('e')
-                    ->join('e.users', 'user')
-                    ->where('user.id = :user')
-                    ->setParameter('user', $user)
-                    ->orderBy('e.id', 'DESC')
-                    ->setMaxResults(3)
-                    ->getQuery()
-                    ->execute();
-            }
-            $user = $this->getUser();
-            //     dd($user);
-            $events->getUsers()->add($user);
-            //    dd($event);
-            $manager->persist($events);
-            $manager->flush();
-        }
-
-
-
-        return $this->redirectToRoute('event_invite', [
-            'events'=>$events->getId(),
-        ]);
-*/
-    }
 }
-
-//SELECT calendar.id, calendar.title
-//FROM user_calendar
-//JOIN calendar ON user_calendar.calendar_id = calendar.id
-//JOIN user ON user_calendar.user_id = user.id
-//WHERE user.email = 'test@test.fr'
