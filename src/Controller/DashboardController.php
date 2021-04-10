@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Calendar;
 use App\Entity\Contact;
+use App\Repository\CalendarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,6 +26,7 @@ class DashboardController extends AbstractController
             ->getQuery()
             ->execute();
 
+
         $repository = $manager->getRepository(Calendar::class);
         $user= $this->getUser();
         if($user){
@@ -37,7 +39,6 @@ class DashboardController extends AbstractController
                 ->getQuery()
                 ->execute();
         }
-
 
         return $this->render('dashboard/index.html.twig', [
             'contacts' => $contacts,

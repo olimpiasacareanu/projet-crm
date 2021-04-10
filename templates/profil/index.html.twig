@@ -6,11 +6,11 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-2 col-sm-12">
                 {% include('nav-left.html.twig') %}
             </div>
 
-            <div class="col-lg-10 profil">
+            <div class="col-lg-10 col-md-10 col-sm-12 profil">
                 <h4>Mon compte</h4>
                 {% for message in app.flashes('message') %}
                     <div>{{ message }}</div>

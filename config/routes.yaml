@@ -1,15 +1,34 @@
+#
+## home
+#
+
 home_index:
     path: /
     controller: App\Controller\HomeController::index
+
+#
+## calendar
+#
 
 calendar_index:
     path: /calendrier
     controller: App\Controller\CalendarController::index
 
+#
+## registration
+#
 
 registration_register:
     path: /registration/
     controller: App\Controller\RegistrationController::register
+
+registration_activation:
+    path: /registration/activation/{token}
+    controller: App\Controller\RegistrationController::activation
+
+#
+## security
+#
 
 security_login:
     path: /security/
@@ -27,14 +46,16 @@ security_resetpass:
     path: /security/resetpass/{token}
     controller: App\Controller\SecurityController::resetPass
 
-api_event_edit:
-    methods: POST
-    path: /api/{id}/edit
-    controller: App\Controller\ApiController::majEvent
+security_legalnotices:
+    path: /legalnotices/
+    controller: App\Controller\SecurityController::legalnotices
 
-registration_activation:
-    path: /registration/activation/{token}
-    controller: App\Controller\RegistrationController::activation
+security_privacypolicy:
+    path: /privacypolicy/
+    controller: App\Controller\SecurityController::privacypolicy
+
+
+
 
 #
 ## Contact

@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 *{
     color: #374955;
+    font-family: 'Montserrat';
 }
 
 .btn-secondary{
@@ -20,6 +22,14 @@
 #calendar{
     margin:40px 40px 40px 0;
 }
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 /******* HEADER *********/
 nav{
@@ -81,7 +91,7 @@ footer .author{
 /********* LOGIN ***********/
 
 .login{
-    margin: 100px;
+    margin:100px;
 }
 
 .login h3{
@@ -455,7 +465,6 @@ footer .author{
     width: 50%;
 }
 
-
 /************ DACHBOARD ************/
 
 .dashboard h4{
@@ -474,5 +483,16 @@ footer .author{
 .dashboard ul li a:hover{
     text-decoration: none;
     opacity: 0.7;
+}
+
+.fc-icon{
+    color: #fff !important;
+}
+
+/****************** LEGAL NOTICES**********/
+
+.legalnotices h3{
+    margin: 40px 0;
+    text-align: center;
 }
 

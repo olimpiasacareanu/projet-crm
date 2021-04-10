@@ -130,4 +130,14 @@ class SecurityController extends AbstractController
         }
 
     }
+
+    public function legalnotices()
+    {
+        return $this->render('legalnotices.html.twig');
+    }
+
+    public function privacypolicy()
+    {
+        return $this->render('privacypolicy.html.twig');
+    }
 }
